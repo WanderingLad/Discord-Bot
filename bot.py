@@ -8,10 +8,8 @@ Contact: Prei#6785 jreilly2112@gmail.com
 '''
 from discord.ext import commands
 from discord import Message
-from dotenv import load_dotenv
 import random 
 import discord
-import spotify
 
 TOKEN = 'nottherealtoken'
 

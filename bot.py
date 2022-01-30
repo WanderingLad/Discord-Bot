@@ -37,7 +37,7 @@ async def leave(ctx):
 
 @bot.command()
 async def play(ctx):
-    if(ctx.message.author.id == 232629621038776331 and ctx.voice_client):
+    if(ctx.message.author.id == user.id and ctx.voice_client):
         guild = ctx.guild
         voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
         audio_source = discord.FFmpegPCMAudio('Music\\oh_hey_alex.mp3')
@@ -46,7 +46,7 @@ async def play(ctx):
 
 @bot.command()
 async def pause(ctx):
-    if(ctx.message.author.id == 232629621038776331 and ctx.voice_client):
+    if(ctx.message.author.id == user.id and ctx.voice_client):
         guild = ctx.guild
         voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
         if voice_client.is_playing():
@@ -54,7 +54,7 @@ async def pause(ctx):
 
 @bot.command()
 async def resume(ctx):
-    if(ctx.message.author.id == 232629621038776331 and ctx.voice_client):
+    if(ctx.message.author.id == user.id and ctx.voice_client):
         guild = ctx.guild
         voice_client: discord.VoiceClient = discord.utils.get(bot.voice_clients, guild=guild)
         if voice_client.is_paused():
@@ -69,7 +69,7 @@ async def on_ready():
         for member in guild.members:
             print(member)
             print(member.id)
-    user = bot.get_user(232629621038776331)
+    user = bot.get_user(user.id)
     await user.send("Bromeo")
 
 ##This sends a series of Link pictures from the popular game legend of Zelda
